@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Mirage Packaging Limited | Jumbo Bags Kenya</title>
+<meta name="description" content="New and second-hand FIBC jumbo bags across Kenya and East Africa.">
+
+<style>
+:root {
+    --navy: #064477;
+    --blue: #075da0;
+    --green: #168449;
+    --pale-green: #eff9e9;
+    --pale-blue: #e6f7fc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #123f68;
+    background: #f7fbf5;
+}
+
+.wrap {
+    max-width: 1500px;
+    margin: auto;
+    border: 3px solid #d8efc9;
+    background: white;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 14px 3%;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1;
+    color: #102b3f;
+    text-decoration: none;
+}
+
+.brand small {
+    display: block;
+    font-size: 9px;
+    color: #2679a4;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--navy);
+}
+
+nav a:hover { color: var(--green); }
+
+.cert {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.cert b {
+    color: var(--green);
+    font-size: 18px;
+}
+
+.quote {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border: 0;
+    border-radius: 5px;
+    padding: 11px 18px;
+    cursor: pointer;
+}
+
+.hero {
+    text-align: center;
+    padding: 30px 4%;
+    background: linear-gradient(110deg, #eff9e9, white, #edf9e9);
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 62px);
+    line-height: 1;
+    margin: 5px;
+    color: var(--navy);
+    font-weight: 900;
+}
+
+.hero h2 {
+    font-size: clamp(20px, 2.6vw, 35px);
+    margin: 0 0 12px;
+    color: var(--navy);
+}
+
+.hero p {
+    font-size: clamp(14px, 1.5vw, 20px);
+    max-width: 850px;
+    margin: 0 auto 18px;
+}
+
+.benefits {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.benefits span::before {
+    content: "✓";
+    background: var(--green);
+    color: white;
+    border-radius: 50%;
+    padding: 3px 6px;
+    margin-right: 7px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+
+.feature {
+    border-radius: 10px;
+    padding: 17px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.used { background: var(--pale-green); }
+.new { background: var(--pale-blue); }
+
+.feature h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: clamp(19px, 2.3vw, 32px);
+    line-height: 1.05;
+    margin: 0;
+    color: var(--green);
+}
+
+.new h2 { color: var(--navy); }
+
+.feature img {
+    width: 100%;
+    max-height: 230px;
+    object-fit: contain;
+}
+
+.feature ul {
+    list-style: none;
+    padding: 0;
+    font-size: clamp(12px, 1.3vw, 16px);
+    font-weight: 600;
+}
+
+.feature li { margin: 12px 0; }
+
+.feature li::before {
+    content: "✓";
+    color: white;
+    background: var(--green);
+    border-radius: 50%;
+    padding: 2px 5px;
+    margin-right: 7px;
+}
+
+.tag {
+    grid-column: 1 / -1;
+    background: #d9f0d6;
+    padding: 6px 10px;
+    border-radius: 18px;
+    font-size: 12px;
+    font-weight: bold;
+    width: max-content;
+}
+
+.feature .quote {
+    justify-self: end;
+    grid-column: 1 / -1;
+}
+
+.products { padding: 0 14px 16px; }
+
+.heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--navy);
+    margin: 0 0 10px;
+}
+
+.heading::before,
+.heading::after {
+    content: "";
+    height: 2px;
+    background: #60ad71;
+    flex: 1;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.product {
+    border: 1px solid #e5eee4;
+    border-radius: 7px;
+    background: #f8faf8;
+    text-align: center;
+    padding: 7px 4px;
+    text-decoration: none;
+    color: var(--navy);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.product img {
+    width: 100%;
+    height: 78px;
+    object-fit: contain;
+}
+
+.product:hover { border-color: var(--green); }
+
+.uses {
+    margin: 0 14px 12px;
+    padding: 10px 14px;
+    background: var(--pale-green);
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1.1fr 1.5fr 1fr;
+    gap: 12px;
+    align-items: center;
+    font-size: 12px;
+}
+
+.uses img {
+    width: 100%;
+    height: 58px;
+    object-fit: cover;
+}
+
+.trust {
+    color: #236c49;
+    font-weight: bold;
+}
+
+#contact {
+    padding: 40px 5%;
+    background: #f2faed;
+}
+
+#contact h2 {
+    text-align: center;
+    color: var(--navy);
+}
+
+.contact-intro {
+    text-align: center;
+    margin: 12px 0;
+}
+
+form {
+    max-width: 720px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbdccc;
+    border-radius: 5px;
+    font: inherit;
+}
+
+textarea {
+    grid-column: 1 / -1;
+    min-height: 100px;
+}
+
+form button { grid-column: 1 / -1; }
+
+footer {
+    background: #07528b;
+    color: white;
+    padding: 16px 3%;
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr 1fr 1fr;
+    gap: 18px;
+    align-items: center;
+    font-size: 11px;
+}
+
+footer .brand { color: white; }
+footer .brand small { color: #d8f2ff; }
+footer a { color: white; }
+
+@media (max-width: 800px) {
+    header { justify-content: center; }
+    nav { justify-content: center; }
+    .cert { display: none; }
+    .features { grid-template-columns: 1fr; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .uses { grid-template-columns: 1fr; }
+    .uses img { height: 100px; }
+    footer { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+    .feature { padding: 10px; }
+    .feature li { margin: 7px 0; }
+    form { grid-template-columns: 1fr; }
+    textarea { grid-column: auto; }
+    footer { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header>
+    <a class="brand" href="#home">
+        🌴 BLUE MIRAGE<br>
+        PACKAGING LIMITED
+        <small>Quality, Reliability, Value for Money</small>
+    </a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About Us</a>
+        <a href="#quality">Quality</a>
+        <a href="#contact">FAQ</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="cert">
+        <b>✔</b> ISO 9001 Certified<br>
+        Quality You Can Trust
+    </div>
+
+    <a class="quote" href="#contact">✉ Request a Quote</a>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <h1>FIBC / JUMBO BAGS</h1>
+    <h2>TRADING COMPANY IN KENYA</h2>
+
+    <p>
+        We buy and sell high-quality FIBC (Jumbo) bags and related
+        products, offering reliable supply, competitive prices and
+        timely delivery across Kenya.
+    </p>
+
+    <div class="benefits">
+        <span>Premium Quality</span>
+        <span>Reliable Supply</span>
+        <span>Competitive Prices</span>
+        <span>Customer Support</span>
+    </div>
+</section>
+
+<section class="features" id="quality">
+
+    <article class="feature used">
+        <h2>QUALITY SECOND HAND<br>FIBC / JUMBO BAGS</h2>
+
+        <img src="assets/used-jumbo-bag.jpg"
+             alt="Second-hand jumbo bag">
+
+        <ul>
+            <li>Thoroughly inspected and cleaned</li>
+            <li>Strong and durable</li>
+            <li>Cost-effective solution</li>
+            <li>Ideal for many industries</li>
+        </ul>
+
+        <div class="tag">✔ Quality Checked &amp; Certified</div>
+        <a class="quote" href="#contact">Enquire Now →</a>
+    </article>
+
+    <article class="feature new">
+        <h2>BRAND NEW<br>FIBC / JUMBO BAGS</h2>
+
+        <img src="assets/new-jumbo-bag.jpg"
+             alt="New jumbo bag with blue loops">
+
+        <ul>
+            <li>High strength &amp; durability</li>
+            <li>UV resistant material</li>
+            <li>Safe and reliable</li>
+            <li>Various sizes &amp; dimensions</li>
+            <li>Custom printing available</li>
+        </ul>
+
+        <div class="tag">✔ ISO 9001 Certified</div>
+        <a class="quote" href="#contact">Enquire Now →</a>
+    </article>
+
+</section>
+
+<section class="products" id="products">
+    <h2 class="heading">OUR PRODUCTS</h2>
+
+    <div class="product-grid">
+
+        <a class="product" href="#contact">
+            <img src="assets/bulk-bag.jpg" alt="FIBC bulk bag">
+            FIBC Bulk Bags
+        </a>
+
+        <a class="product" href="#contact">
+            <img src="assets/baffle-bag.jpg" alt="Baffle bag">
+            Baffle Bags
+        </a>
+
+        <a class="product" href="#contact">
+            <img src="assets/u-panel-bag.jpg" alt="U panel bag">
+            U Panel Bags
+        </a>
+
+        <a class="product" href="#contact">
+            <img src="assets/conductive-bag.jpg" alt="Conductive bag">
+            Conductive Bags
+        </a>
+
+        <a class="product" href="#contact">
+            <img src="assets/food-grade-bag.jpg" alt="Food grade bag">
+            Food Grade Bags
+        </a>
+
+        <a class="product" href="#contact">
+            <img src="assets/discharge-bag.jpg" alt="Discharge bag">
+            Discharge Bags
+        </a>
+
+        <a class="product" href="#contact">
+            <img src="assets/liner-bag.jpg" alt="Liner bag">
+            Liner Bags
+        </a>
+
+    </div>
+</section>
+
+<section class="uses" id="about">
+    <div>
+        <strong>FIBC FOR ALL USES</strong><br>
+        Agriculture · Construction · Chemicals · Food ·
+        Pharmaceuticals · Mining
+    </div>
+
+    <img src="assets/industrial-use.jpg"
+         alt="Industrial packaging applications">
+
+    <div class="trust">
+        ✔ Trusted Quality Across Kenya<br>
+        Your bulk packaging partner
+    </div>
+</section>
+
+<section id="contact">
+    <h2>REQUEST A QUOTE</h2>
+
+    <p class="contact-intro">
+        Tell us what you need and our team will get back to you.
+    </p>
+
+    <form id="quoteForm">
+        <input id="customerName"
+               placeholder="Full Name *" required>
+
+        <input id="customerEmail"
+               type="email"
+               placeholder="Email Address *" required>
+
+        <input id="customerPhone"
+               type="tel"
+               placeholder="Phone Number">
+
+        <select id="productType" required>
+            <option value="">Select product *</option>
+            <option>Brand-new jumbo bags</option>
+            <option>Second-hand jumbo bags</option>
+            <option>Other FIBC bags</option>
+        </select>
+
+        <textarea id="requirements"
+                  placeholder="Message / Requirements *"
+                  required></textarea>
+
+        <button class="quote" type="submit">
+            Send Inquiry →
+        </button>
+    </form>
+
+    <p class="contact-intro">
+        Phone: +254 750 790 490<br>
+        Email: info@bluemiragepackaging.co.ke<br>
+        Website: www.bluemiragepackaging.co.ke
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <div class="brand">
+        🌴 BLUE MIRAGE<br>
+        PACKAGING LIMITED
+        <small>Quality, Reliability, Value for Money</small>
+    </div>
+
+    <div>
+        High-quality FIBC / jumbo bags with a focus on reliability,
+        affordability and customer satisfaction.
+    </div>
+
+    <div>
+        ✔ Quality Assured<br>
+        ✔ Nationwide Delivery<br>
+        ✔ Customer Support
+    </div>
+
+    <div>
+        <a href="#home">Home</a> ·
+        <a href="#products">Products</a><br>
+        <a href="#contact">Request a Quote</a>
+    </div>
+</footer>
+
+</div>
+
+<script>
+document.getElementById("quoteForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const customerName =
+        document.getElementById("customerName").value;
+
+    const customerEmail =
+        document.getElementById("customerEmail").value;
+
+    const customerPhone =
+        document.getElementById("customerPhone").value;
+
+    const productType =
+        document.getElementById("productType").value;
+
+    const requirements =
+        document.getElementById("requirements").value;
+
+    const subject = encodeURIComponent(
+        "Jumbo Bag Quotation Enquiry"
+    );
+
+    const body = encodeURIComponent(
+        "Name: " + customerName + "\n" +
+        "Email: " + customerEmail + "\n" +
+        "Phone: " + customerPhone + "\n" +
+        "Product: " + productType + "\n" +
+        "Requirements: " + requirements
+    );
+
+    window.location.href =
+        "mailto:info@bluemiragepackaging.co.ke" +
+        "?subject=" + subject + "&body=" + body;
+});
+</script>
+
+</body>
+</html>
